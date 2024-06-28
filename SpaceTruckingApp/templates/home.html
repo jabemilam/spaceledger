@@ -1,0 +1,56 @@
+{% include 'layout.html' %}
+
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            Your Runs!
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">List of your Runs!</h5>
+            <p class="card-text">Information regarding your runs</p>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Commodity</th>
+                        <th>Buy Location</th>
+                        <th>Sell Location</th>
+                        <th>Description</th>
+                        <th>Expenditure</th>
+                        <th>Sale</th>
+                        <th>Profit</th>
+                        <th>Run Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for run in runs %}
+                    <tr>
+                        <td>{{ run.commodity }}</td>
+                        <td>{{ run.buy_location }}</td>
+                        <td>{{ run.sell_location }}</td>
+                        <td>{{ run.description }}</td>
+                        <td>{{ run.expenditure }}</td>
+                        <td>{{ run.sale }}</td>
+                        <td>{{ run.profit }}</td>
+                        <td>{{ run.run_time }}</td>
+                        <td>
+                            <div class="d-flex">
+                                <button onclick="window.location.href='edit-run/{{run.id}}'"
+                                        type="button" class="btn btn-info">Edit
+                                </button>
+                                <button onclick="window.location.href='/runs/delete/{{run.id}}'"
+                                        type="button" class="btn btn-danger">Delete
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+
+  </tbody>
+</table>
+
+            <a href="add-run" class="btn btn-primary">Add a new Run!</a>
+        </div>
+    </div>
+</div>

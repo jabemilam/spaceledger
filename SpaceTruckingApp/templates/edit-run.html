@@ -1,0 +1,49 @@
+{% include 'layout.html' %}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+             Let's edit your run!
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                <div class="form-group">
+                    <label>Commodity</label>
+                    <textarea class="form-control" rows="1" name="commodity" required>{{run.commodity}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Buy Location</label>
+                    <textarea class="form-control" rows="1" name="buy_location" required>{{run.buy_location}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Sell Location</label>
+                    <textarea class="form-control" rows="1" name="sell_location" required>{{run.sell_location}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="form-control" rows="3" name="description" required>{{run.description}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Total Expenditures</label>
+                    <textarea class="form-control" rows="1" name="expenditure" required>{{run.expenditure}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Sale Price</label>
+                    <textarea class="form-control" rows="1" name="sale" required>{{run.sale}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>How long run took (00:00)</label>
+                    <textarea class="form-control" rows="1" name="run_time" required>{{run.run_time}}</textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit Edit</button>
+
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+

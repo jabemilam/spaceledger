@@ -1,0 +1,61 @@
+{% include 'layout.html' %}
+
+<div class="container">
+    <div class="card text-center mb-4">
+        <div class="card-header">
+            Leaderboard
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Top Earners for {{ current_date }}</h5>
+            <p class="card-text">Here are the top earners for the current month!</p>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>User</th>
+                        <th>Total Profit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for rank, entry in enumerate(leaderboard_data, start=1) %}
+                    <tr>
+                        <td>{{ rank }}</td>
+                        <td>{{ entry.username }}</td>
+                        <td>{{ entry.total_profit }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card text-center">
+        <div class="card-header">
+            Last Month's Top Earners
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Top 3 Earners for {{ previous_month_date }}</h5>
+            <p class="card-text">Here are the top 3 earners for the previous month!</p>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>User</th>
+                        <th>Total Profit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for rank, entry in enumerate(previous_month_data, start=1) %}
+                    <tr>
+                        <td>{{ rank }}</td>
+                        <td>{{ entry.username }}</td>
+                        <td>{{ entry.total_profit }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

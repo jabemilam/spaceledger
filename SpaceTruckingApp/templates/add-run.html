@@ -1,0 +1,43 @@
+{% include 'layout.html' %}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Edit Run
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                <div class="form-group">
+                    <label>Commodity</label>
+                    <textarea class="form-control" rows="1" name="commodity" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Buy Location</label>
+                    <textarea class="form-control" rows="1" name="buy_location" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Sell Location</label>
+                    <textarea class="form-control" rows="1" name="sell_location" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="form-control" rows="3" name="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Total Expenditures</label>
+                    <textarea class="form-control" rows="1" name="expenditure" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Sale Price</label>
+                    <textarea class="form-control" rows="1" name="sale" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>How long run took (00:00)</label>
+                    <textarea class="form-control" rows="1" name="run_time" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </form>
+        </div>
+    </div>
+</div>
